@@ -14,6 +14,12 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
-test {
-    useJUnitPlatform()
+application {
+    mainClass = 'ua.nure.bulhakov.Application'
+}
+
+task generateDiagrams(type:Exec) {
+    workingDir 'src/python'
+
+    commandLine 'python3', 'main.py'
 }
