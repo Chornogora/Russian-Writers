@@ -24,7 +24,7 @@ public class FileProcessor implements Callable<Map<Character, BigDecimal>> {
             int read = fileReader.read();
             while (read != -1) {
                 char character = Character.toLowerCase((char) read);
-                if (character > 1072 && character < 1105) {
+                if (character >= 1072 && character < 1105) {
                     addToMap(character);
                 }
                 read = fileReader.read();

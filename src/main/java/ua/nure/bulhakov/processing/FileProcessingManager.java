@@ -49,8 +49,8 @@ public class FileProcessingManager {
 
     private void processDirectoryMultithreading(List<FileProcessor> processors) throws InterruptedException {
         int threadsAmount = applicationProperties.getIntProperty(ApplicationProperties.Property.THREADS_AMOUNT);
-        ExecutorService threadPool = new ThreadPoolExecutor(1, threadsAmount,
-                100L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
+        ExecutorService threadPool = new ThreadPoolExecutor(threadsAmount, threadsAmount,
+                0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
         System.out.println("Started processing files using " + threadsAmount + " threads");
         long time = System.currentTimeMillis();
         threadPool.invokeAll(processors);
