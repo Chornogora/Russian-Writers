@@ -7,7 +7,7 @@ import seaborn as sns
 def draw_diagram(statistics, target_directory, file_name):
     display_data = preprocess_statistics(statistics)
 
-    plt.figure(figsize=(10, 4.8))
+    plt.figure(figsize=(10, 5))
     plt.barh(display_data['letters'], display_data['frequencies'], color='slateblue')
     plt.title(file_name, fontsize=27)
     plt.xlabel('Frequency, %', fontsize=19)

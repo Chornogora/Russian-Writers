@@ -24,8 +24,10 @@ public class FileProcessor implements Callable<Map<Character, BigDecimal>> {
             int read = fileReader.read();
             while (read != -1) {
                 char character = Character.toLowerCase((char) read);
-                if (character >= 1072 && character < 1105) {
+                if (character >= 1072 && character < 1104) {
                     addToMap(character);
+                } else if (character == 1105) {
+                    addToMap('е');
                 }
                 read = fileReader.read();
             }

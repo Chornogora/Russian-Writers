@@ -10,3 +10,6 @@ gen/**
 .gradle/
 build/
 bin/
+
+#python
+**/__pycache__/**
